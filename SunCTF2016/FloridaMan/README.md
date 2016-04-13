@@ -1,10 +1,11 @@
-Floridaman
-===========
-Recon category - I forget the point value
+Find Floridaman
+===============
+Recon category - 50 points
 
 Challenge Description
 ---------------------
-Florida man did WHAT with an alligator?
+In other news… Floridaman did what with an alligator?
+Remember, this has the normal flag format.
 
 Hints Included:
 - some pretty much useless initial hint I can't even remember
