@@ -13,6 +13,10 @@ Hints Included:
 - flag was posted before 2 days ago (a fake flag was posted during the competition)
 - Involves a drive-thru
 
+Solved By 
+---------
+nullp0inter
+
 How I Solved It
 ---------------
 Any _true_ Floridian has probably heard of the /r/Floridaman subreddit and those who follow it may recall a recent news story from
