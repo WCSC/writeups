@@ -5,7 +5,10 @@ There were a couple themes for the CTF but quite a few challenges were based on 
 
 About
 -----
-I participated in this CTF originally with brad_d and bspar with help from und3rfl0w towards the end. The binaries were pretty introductory, being done without stack protection but there were some really cool RE challenges and some forensics stuff as well.
+Participants:
+- nullp0inter
+- brad_d
+- bspar
+- und3rfl0w
 
-I solved one of the binaries and one of the recon challenges. I don't have the binary anymore though unfortunately.
-
+The binaries were pretty introductory, being done without stack protection but there were some really cool RE challenges and some forensics stuff as well. We solved all the binaries and came in first place locally, so it went pretty great.
