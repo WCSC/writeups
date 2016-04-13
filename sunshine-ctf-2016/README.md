@@ -11,4 +11,4 @@ Participants:
 - bspar
 - und3rfl0w
 
-The binaries were pretty introductory, being done without stack protection but there were some really cool RE challenges and some forensics stuff as well. We solved all the binaries and came in first place locally, so it went pretty great.
+The binaries were pretty introductory, being done without stack protection but there were some really cool Social Engineering challenges and some forensics stuff as well. We solved all the binaries and came in first place locally, so it went pretty great.
