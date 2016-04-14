@@ -6,7 +6,7 @@ About
 -----
 We are given the binary running on a server that we connect to using netcat. Upon connecting you see something similar to this:
 
-`
+```
 Welcome to the pro club. you just paid a door fee and have no respect. earn ur cred on the dancefloor!
 give us ur sick dance moves like so:
 whip,naenae,whip,whip,naenae<ENTER>
@@ -36,8 +36,8 @@ do the whip!
 _/¯    ¯\_
 
 cool dance! come again!
-`
-Which you have input to.
+```
+You have input here so may as well start looking at the buffer.
 
 Solved By 
 ----------
