@@ -33,7 +33,7 @@ After a few hours of Googling and researching, I came across [Hensel's Lemma](ht
 
 I found a [post](http://mathforum.org/library/drmath/view/70474.html) which has formulas for finding our roots. Basically we have two main steps:
 
-1. Find the square roots modulo ![](https://latex.codecogs.com/gif.latex?$p$, i.e., $m^2 %5Cpmod{p}$). This is pretty easy to find using a modular square root algorithm.
+1. Find the square roots modulo ![](https://latex.codecogs.com/gif.latex?$p$), i.e., ![](https://latex.codecogs.com/gif.latex?$m^2 %5Cpmod{p}$). This is pretty easy to find using a modular square root algorithm.
 2. Find roots of increasing powers of ![](https://latex.codecogs.com/gif.latex?$p$) using the equation ![](https://latex.codecogs.com/gif.latex?r%20-%20%5Cfrac%7B%28r%5E2%20-%20p%5E2%29%7D%7B2r%7D%20%5Cpmod%7Bp%5E2%7D), where ![](https://latex.codecogs.com/gif.latex?$r$) is one of the roots found from step 1. (Do this step again for every root found in step 1).
 
 Since we're interested in the roots ![](https://latex.codecogs.com/gif.latex?$%5Cmod{p^2}$), we can stop here and look at the two new roots found in step 2. One of them is our flag, the other is extraneous. We write a script to do our computations:
