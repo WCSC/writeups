@@ -3,6 +3,7 @@
 ## Solution By: duck (@duckythescientist)
 
 # Solution (copied from solve.py, formatting may be a bit rough)
+```
 The pcap is a capture of a USB keyboard. 
 The proper way to tell is by finding the VID/PID combination during enumeration then looking up the device from that.
 The easy way is just to have looked at enough USB stuffs to recognize that it's a keyboard. :)
@@ -27,3 +28,4 @@ Treating it as pure Dvorak doesn't work either because some of the symbols aren'
 Truthfully, I didn't save the key, and I did some unswapping by hand, so I don't know if this final script is fully correct. 
 It's at least really close. (may need to swap ':' with 'Z')
 tshark -r ./intercept.pcapng -T fields -e usb.capdata -Y usb.capdata 2>/dev/null | tail -n +6 | python usbcap_to_ascii.py
+```
