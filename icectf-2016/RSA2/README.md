@@ -72,7 +72,7 @@ phi = p_1 * q_1
 In order to find d we need to calculate the modular inverse of c and phi. We can do this in python with a little bit of code found on [stackoverflow](http://stackoverflow.com/questions/4798654/modular-multiplicative-inverse-function-in-pyt "Modular Multiplicative Inverse in Python").
 Putting it into the script we get the following which spits out d:
 
-```
+```python
 #!/usr/bin/python
 
 # egcd and modinv functions from: http://stackoverflow.com/questions/4798654/modular-multiplicative-inverse-function-in-python
