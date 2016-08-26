@@ -15,28 +15,28 @@ After downloading the provided text file, we open it up and see what we have:
     c=0xd9d6345f4f961790abb7830d367bede431f91112d11aabe1ed311c7710f43b9b0d5331f71a1fccbfca71f739ee5be42c16c6b4de2a9cbee1d827878083acc04247c6e678d075520ec727ef047ed55457ba794cf1d650cbed5b12508a65d36e6bf729b2b13feb5ce3409d6116a97abcd3c44f136a5befcb434e934da16808b0b
 
 
-Hmm... looks like RSA, but without an exponent. The name of the challenge is Rabin, so we read [Wikipedia](https://en.wikipedia.org/wiki/Rabin_cryptosystem) to get the details of the cryptosystem to find out how encryption works. For a message $m$, we get our ciphertext $c$ with the congruence $c = m^2 \pmod{N}$.
+Hmm... looks like RSA, but without an exponent. The name of the challenge is Rabin, so we read [Wikipedia](https://en.wikipedia.org/wiki/Rabin_cryptosystem) to get the details of the cryptosystem to find out how encryption works. For a message ![](https://latex.codecogs.com/gif.latex?$m$), we get our ciphertext ![](https://latex.codecogs.com/gif.latex?$c$) with the congruence ![](https://latex.codecogs.com/gif.latex?%24%5Csqrt%7Bc%7D%20%5Cpmod%7Bp%5E2%7D%24).
 
-We use [Yafu](https://sourceforge.net/projects/yafu/) to find factors of `N`:
+We use [Yafu](https://sourceforge.net/projects/yafu/) to find factors of ![](https://latex.codecogs.com/gif.latex?$N$):
 
     ***factors found***
     
     P154 = 8683574289808398551680690596312519188712344019929990563696863014403818356652403139359303583094623893591695801854572600022831462919735839793929311522108161
     P154 = 8683574289808398551680690596312519188712344019929990563696863014403818356652403139359303583094623893591695801854572600022831462919735839793929311522108161
 
-So $N$ is a square of a prime $p$.
+So ![](https://latex.codecogs.com/gif.latex?$N$) is a square of a prime ![](https://latex.codecogs.com/gif.latex?$p$).
 
-After reading about decrypting a Rabin cipher, it seems we need our primes $p$ and $q$ to be congruent to $3\pmod{4}$, but $p \equiv q \not\equiv 3 \pmod{4}$, so we can't use the decryption method found in the article easily.
+After reading about decrypting a Rabin cipher, it seems we need our primes ![](https://latex.codecogs.com/gif.latex?$N$) is a square of a prime ![](https://latex.codecogs.com/gif.latex?$p$) and ![](https://latex.codecogs.com/gif.latex?$N$) is a square of a prime ![](https://latex.codecogs.com/gif.latex?$q$) to be congruent to ![](https://latex.codecogs.com/gif.latex?$N$) is a square of a prime ![](https://latex.codecogs.com/gif.latex?$3%5Cpmod{4}$), but ![](https://latex.codecogs.com/gif.latex?$N$) is a square of a prime ![](https://latex.codecogs.com/gif.latex?$p %5Cequiv q %5Cnot%5Cequiv 3 %5Cpmod{4}$), so we can't use the decryption method found in the article easily.
 
-The problem boils down to finding $\sqrt{c} \pmod{p^2}$.
-After a few hours of Googling and researching, I came across [Hensel's Lemma](https://en.wikipedia.org/wiki/Hensel%27s_lemma). Hensel's Lemma says we can use the roots found from $\sqrt{c} \pmod{p}$ to "lift" to a higher power of $p$, i.e., $\sqrt{c} \pmod{p^k}$ for any $k \geq 2$.
+The problem boils down to finding ![](https://latex.codecogs.com/gif.latex?$%5Csqrt{c} %5Cpmod{p^2}$).
+After a few hours of Googling and researching, I came across [Hensel's Lemma](https://en.wikipedia.org/wiki/Hensel%27s_lemma). Hensel's Lemma says we can use the roots found from ![](https://latex.codecogs.com/gif.latex?$%5Csqrt{c} %5Cpmod{p}$) to "lift" to a higher power of ![](https://latex.codecogs.com/gif.latex?$p$), i.e., ![](https://latex.codecogs.com/gif.latex?$%5Csqrt{c} %5Cpmod{p^k}$) for any ![](https://latex.codecogs.com/gif.latex?$k %5Cgeq 2$).
 
 I found a [post](http://mathforum.org/library/drmath/view/70474.html) which has formulas for finding our roots. Basically we have two main steps:
 
-1. Find the square roots modulo $p$, i.e., $m^2 \pmod{p}$. This is pretty easy to find using a modular square root algorithm.
-2. Find roots of increasing powers of $p$ using the equation $r - \frac{(r^2 - p^2)}{2r} \pmod{p^2}$, where $r$ is one of the roots found from step 1. (Do this step again for every root found in step 1).
+1. Find the square roots modulo ![](https://latex.codecogs.com/gif.latex?$p$, i.e., $m^2 %5Cpmod{p}$). This is pretty easy to find using a modular square root algorithm.
+2. Find roots of increasing powers of ![](https://latex.codecogs.com/gif.latex?$p$) using the equation ![](https://latex.codecogs.com/gif.latex?r%20-%20%5Cfrac%7B%28r%5E2%20-%20p%5E2%29%7D%7B2r%7D%20%5Cpmod%7Bp%5E2%7D), where ![](https://latex.codecogs.com/gif.latex?$r$) is one of the roots found from step 1. (Do this step again for every root found in step 1).
 
-Since we're interested in the roots $\mod{p^2}$, we can stop here and look at the two new roots found in step 2. One of them is our flag, the other is extraneous. We write a script to do our computations:
+Since we're interested in the roots ![](https://latex.codecogs.com/gif.latex?$%5Cmod{p^2}$), we can stop here and look at the two new roots found in step 2. One of them is our flag, the other is extraneous. We write a script to do our computations:
 
 ~~~python
 #!/usr/bin/env python
