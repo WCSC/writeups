@@ -15,7 +15,7 @@ After downloading the provided text file, we open it up and see what we have:
     c=0xd9d6345f4f961790abb7830d367bede431f91112d11aabe1ed311c7710f43b9b0d5331f71a1fccbfca71f739ee5be42c16c6b4de2a9cbee1d827878083acc04247c6e678d075520ec727ef047ed55457ba794cf1d650cbed5b12508a65d36e6bf729b2b13feb5ce3409d6116a97abcd3c44f136a5befcb434e934da16808b0b
 
 
-Hmm... looks like RSA, but without an exponent. The name of the challenge is Rabin, so we read [Wikipedia](https://en.wikipedia.org/wiki/Rabin_cryptosystem) to get the details of the cryptosystem to find out how encryption works. For a message ![](https://latex.codecogs.com/gif.latex?$m$), we get our ciphertext ![](https://latex.codecogs.com/gif.latex?$c$) with the congruence ![](https://latex.codecogs.com/gif.latex?%24%5Csqrt%7Bc%7D%20%5Cpmod%7Bp%5E2%7D%24).
+Hmm... looks like RSA, but without an exponent. The name of the challenge is Rabin, so we read [Wikipedia](https://en.wikipedia.org/wiki/Rabin_cryptosystem) to get the details of the cryptosystem to find out how encryption works. For a message ![](https://latex.codecogs.com/gif.latex?$m$), we get our ciphertext ![](https://latex.codecogs.com/gif.latex?$c %5Cequiv m^2 %5Cpmod{N}$). The goal is to find the square roots of ![](https://latex.codecogs.com/gif.latex?$c$) in ![](https://latex.codecogs.com/gif.latex?%24%5Csqrt%7Bc%7D%20%5Cpmod%7Bp%5E2%7D%24).
 
 We use [Yafu](https://sourceforge.net/projects/yafu/) to find factors of ![](https://latex.codecogs.com/gif.latex?$N$):
 
