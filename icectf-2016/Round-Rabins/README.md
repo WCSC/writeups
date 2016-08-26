@@ -15,7 +15,7 @@ After downloading the provided text file, we open it up and see what we have:
     c=0xd9d6345f4f961790abb7830d367bede431f91112d11aabe1ed311c7710f43b9b0d5331f71a1fccbfca71f739ee5be42c16c6b4de2a9cbee1d827878083acc04247c6e678d075520ec727ef047ed55457ba794cf1d650cbed5b12508a65d36e6bf729b2b13feb5ce3409d6116a97abcd3c44f136a5befcb434e934da16808b0b
 
 
-Hmm... looks like RSA, but without an exponent. The name of the challenge is Rabin, so we read [Wikipedia](https://en.wikipedia.org/wiki/Rabin_cryptosystem) to get the details of the cryptosystem to find out how encryption works. For a message $m$, we get our ciphertext $c$ with the congruence $c = m^2 (mod N)$.
+Hmm... looks like RSA, but without an exponent. The name of the challenge is Rabin, so we read [Wikipedia](https://en.wikipedia.org/wiki/Rabin_cryptosystem) to get the details of the cryptosystem to find out how encryption works. For a message $m$, we get our ciphertext $c$ with the congruence $c = m^2 \pmod{N}$.
 
 We use [Yafu](https://sourceforge.net/projects/yafu/) to find factors of `N`:
 
@@ -47,7 +47,7 @@ N=0x6b612825bd7972986b4c0ccb8ccb2fbcd25fffbadd57350d713f73b1e51ba9fc4a6ae862475e
 
 c=0xd9d6345f4f961790abb7830d367bede431f91112d11aabe1ed311c7710f43b9b0d5331f71a1fccbfca71f739ee5be42c16c6b4de2a9cbee1d827878083acc04247c6e678d075520ec727ef047ed55457ba794cf1d650cbed5b12508a65d36e6bf729b2b13feb5ce3409d6116a97abcd3c44f136a5befcb434e934da16808b0b
 '''
-
+# some functions from http://codereview.stackexchange.com/questions/43210/tonelli-shanks-algorithm-implementation-of-prime-modular-square-root/43267
 def legendre_symbol(a, p):
     """
     Legendre symbol
