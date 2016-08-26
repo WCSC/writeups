@@ -1,9 +1,9 @@
 # IceCTF 2016
 # Intercepted Part One
-## Solution By: duck (@duckythescientist)
+## Solution By: [duck](https://github.com/duckythescientist)
 
-# Solution (copied from solve.py, formatting may be a bit rough)
-```
+# Solution (copied from solve.py)
+```python
 The pcap is a capture of a USB keyboard. 
 The proper way to tell is by finding the VID/PID combination during enumeration then looking up the device from that.
 The easy way is just to have looked at enough USB stuffs to recognize that it's a keyboard. :)
