@@ -1,5 +1,8 @@
 # IceCTF 2016
-# Solution By: Nullp0inter
+## Solution By: Nullp0inter
+
+# Spotlight Web 10pts
+Someone turned out the lights and now we can't find anything. Send halp! spotlight
 
 # Solution:
 Obviously with around 1600 solves, not a lot of people need this but in case you do I figured I would include it for completeness' sake.
