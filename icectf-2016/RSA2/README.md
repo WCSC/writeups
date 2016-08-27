@@ -1,6 +1,9 @@
-# IceCTF 2016
-## RSA 2
+# IceCTF 2016 RSA 2
 ## Solution By: Nullp0inter
+
+# RSA2 Cryptography 90 pts
+
+I guess the 3rd time is the charm? Or not... flag.txt
 
 # Solution:
 
@@ -98,6 +101,7 @@ phi = p_1 * q_1
 d = modinv(e,phi)
 print hex(d)
 ```
+
 From there you can either do the math in python or just provide your c and d values to the tool [here](http://nmichaels.org/rsa.py "Online RSA Tool") which gives back the flag in hex format
 which means all you need to do is convert hex to ascii which again is pretty easy and can be done online [here](http://www.rapidtables.com/convert/number/hex-to-ascii.htm "Online Hex to ASCII converter") if you are feeling lazy.
 
