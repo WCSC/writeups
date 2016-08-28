@@ -38,3 +38,8 @@ IceBot IceCTF{H3Re_y0U_9O_M4s7Er_m4kE_5uR3_yOU_K33P_iT_54F3}
 
 There is the flag:
 `IceCTF{H3Re_y0U_9O_M4s7Er_m4kE_5uR3_yOU_K33P_iT_54F3}`
+
+**_NOTE_** I have seen a few people quite literally joined my channel on glitch.is and try `!flag`. Please note that if you
+*literally* try `/join nullp0inter` you will literally be joining a channel with me that I am the sole op of. Instead as I
+mentioned you should do a `/join <name>` where name is **_your_** username. That is to say that if your nick on the IRC is
+`xxmlgsniper420yolo` then the command you'll want to use is `/join xxmlgsniper420yolo`. Hopefully this clears up any confusion
