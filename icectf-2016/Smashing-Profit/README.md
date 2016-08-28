@@ -208,7 +208,7 @@ IceCTF{who_would_have_thunk?}
 [ctf-xxxx@icectf-shell-2016 /home/profit]$ 
 ```
 
-There it is! The flag is `IceCTF{who_would_have_thunk}`.
+There it is! The flag is `IceCTF{who_would_have_thunk?}`.
 
 # On Endianness:
 While this is pretty obvious to many people in the CTF, I wanted to write a quick blurb about how endianness works for any new folks that
