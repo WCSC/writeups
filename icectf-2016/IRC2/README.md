@@ -45,6 +45,6 @@ mentioned you should do a `/join <name>` where name is **_your_** username. That
 `xxmlgsniper420yolo` then the command you'll want to use is `/join xxmlgsniper420yolo`. Hopefully this clears up any confusion
 
 **_ALTERNATIVELY_** You can simply join a nonsense channel and hope that you were the first to attempt to join such a channel.
-One example that I did, and please don't try this one as I am already the op of it, is `/binsoutforharambe`. If you try nonsense
+One example that I did, and please don't try this one as I am already the op of it, is `/join #binsoutforharambe`. If you try nonsense
 names for the channel, chances are you'll probably have been the first to do it. The idea is that when you join the channel, you
 are listed as an `Operator`. If you are not listed as an `Operator` IceBot will tell you so and refuse to give you the flag.
