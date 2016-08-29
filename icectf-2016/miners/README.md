@@ -7,7 +7,7 @@ The miners website has been working on adding a login portal so that all miners 
 ## Solution
 The authors of the miners site have conveniently included a link to the PHP code they use to validate logins. 
 
-~~~
+```php
 <?php
 include "config.php";
 $con = mysqli_connect($MYSQL_HOST, $MYSQL_USER, $MYSQL_PASS, $MYSQL_DB);
@@ -23,7 +23,7 @@ if (mysqli_num_rows($result) !== 1) {
 	echo "<p>Your flag is: $FLAG</p>";
   }
 ?>
-~~~
+```
 
 The site will let you in if the query returns 1 and only 1 record. 
 
