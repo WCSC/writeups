@@ -29,11 +29,14 @@ The site will let you in if the query returns 1 and only 1 record.
 
 The challenge description suggests that there are no valid users in the database, but we need it to return 1 record anyway. 
 
-The SQL ~~~UNION~~~ keyword, will join two seperate SELECT queries together, provided that they both have the same number of fields. 
+The SQL `UNION` keyword, will join two seperate SELECT queries together, provided that they both have the same number of fields. 
 
-We can make the assumption that the users table has three fields, user_id, username, and password. 
+We can make the assumption that the users table has three fields, *user_id*, *username*, and *password*. 
 
-If the string, ~~~' UNION SELECT '1','2','3~~~ is injected into the password field, the whole query becomes ~~~SELECT * FROM users WHERE username='' AND password='' UNION SELECT '1','2','3'~~~
+If the string, `' UNION SELECT '1','2','3` is injected into the password field, the whole query becomes 
+~~~
+SELECT * FROM users WHERE username='' AND password='' UNION SELECT '1','2','3'
+~~~
 
 This gives us the flag, IceCTF{the_miners_union_is_a_strong_one}.
 
