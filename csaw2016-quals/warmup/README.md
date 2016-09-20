@@ -8,7 +8,7 @@ So you want to be a pwn-er huh? Well let's throw you an easy one ;)
 `nc pwn.chal.csaw.io 8000`
 
 ## Solution
-Warmup gives you a 64-bit ELF binary. When run, it produces the following output: 
+Warmup gives you a 64-bit ELF binary. When run, it produces the following output and allows the user to enter a string.
 ~~~
 sh$ ./warmup
 -Warm Up-
@@ -46,7 +46,7 @@ Non-debugging symbols:
 (gdb)
 ~~~ 
 
-The one function that sticks out here is "easy". If we disasemble in in gdb we see that it calls `system("cat flag.txt")`
+The one function that sticks out here is "easy". If we disasemble it we see that it calls `system("cat flag.txt")`
 
 ~~~
 (gdb) disas easy
@@ -63,7 +63,7 @@ End of assembler dump.
 (gdb)
 ~~~
 
-The main function ends with a `gets()` call followed by the `leave` and `ret` instructions. Since `gets()` is vulnerable to buffer overflows, thisi should be easy. 
+The main function ends with a `gets()` call followed by the `leave` and `ret` instructions. Since `gets()` is vulnerable to buffer overflows, we should be able to overwrite the return address of the main function and replace it with the address of "easy". 
 
 Let's set a breakpoint after the call to `gets()`, enter some text, and observe what happens on the stack. 
 
