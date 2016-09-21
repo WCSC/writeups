@@ -39,7 +39,7 @@ Checking....
 You did not pass 0
 ~~~ 
 
-I decided to test what happens if the first of the 30 characters was correct. 
+It looks like this program might be checking for some input string and telling us how many characters are correct. Let's test this out.
 
 ~~~
 $ for c in {a..z}  {A..Z}; do echo -n "$c$(perl -e "print 'a'x29")"| ./rock | grep pass; done;
@@ -88,7 +88,10 @@ while 1:
         charIndex = charIndex + 1
 ~~~
 
+So we run the script...
+
 ~~~
+$ python solve_python.py
 ...
 Pass 27
 Pass 28
