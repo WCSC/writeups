@@ -18,7 +18,7 @@ Can you match these regexes?
 ~~~
 And it gives us some seconds to create a phrase that belongs to that regular expression *
 
-* Read about regular expressions -> https://msdn.microsoft.com/en-us/library/ae5bf541(v=vs.100).aspx
+\* Read about regular expressions -> https://msdn.microsoft.com/en-us/library/ae5bf541(v=vs.100).aspx
 A possible phrase (or matching phrase) that belongs to that regular expression would be: 5lfbbbclementinechairclementine11111111eHfeKKKK
 
 The problem is that it gives us 10 seconds to come up with a phrase, and as soon as we enter it (which is nearly impossible as we have only 10 seconds), it's gonna ask us to match another regular expression... 
