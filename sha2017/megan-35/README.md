@@ -1,5 +1,4 @@
-# CSAW 2016 Quals
-# coinslot
+# megan-35
 ##### Brad Daniels -- USF Whitehatter's Computer Security Club
 ##### pwning -- 200 points
 ## Description
